@@ -9,6 +9,17 @@ class Admin extends CI_Controller
         is_logged_in();
     }
 
+    public function cetak()
+    {
+        $data['title'] = 'Test Cetak';
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-L']);
+        $html = $this->load->view('admin/cetak', $data, true);
+        $mpdf->WriteHTML($html);
+        $mpdf->Output();
+    }
+
     public function index()
     {
         $data['title'] = 'Dashboard';

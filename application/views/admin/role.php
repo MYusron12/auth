@@ -11,8 +11,10 @@
             <?= $this->session->flashdata('message'); ?>
 
             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#newRoleModal">Add New Role</a>
-
-            <table class="table table-hover">
+            <br>
+            <a href="<?= base_url('admin/cetak'); ?>" class="btn btn-primary" target="_blank">Cetak</a>
+            <br>
+            <table class="table table-hover" id="dataTable">
                 <thead>
                     <tr>
                         <th scope="col">#</th>
@@ -23,16 +25,16 @@
                 <tbody>
                     <?php $i = 1; ?>
                     <?php foreach ($role as $r) : ?>
-                    <tr>
-                        <th scope="row"><?= $i; ?></th>
-                        <td><?= $r['role']; ?></td>
-                        <td>
-                            <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning">access</a>
-                            <a href="" class="badge badge-success">edit</a>
-                            <a href="" class="badge badge-danger">delete</a>
-                        </td>
-                    </tr>
-                    <?php $i++; ?>
+                        <tr>
+                            <th scope="row"><?= $i; ?></th>
+                            <td><?= $r['role']; ?></td>
+                            <td>
+                                <a href="<?= base_url('admin/roleaccess/') . $r['id']; ?>" class="badge badge-warning">access</a>
+                                <a href="" class="badge badge-success">edit</a>
+                                <a href="" class="badge badge-danger">delete</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
                     <?php endforeach; ?>
                 </tbody>
             </table>
@@ -74,4 +76,4 @@
             </form>
         </div>
     </div>
-</div> 
+</div>

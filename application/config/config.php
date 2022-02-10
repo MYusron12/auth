@@ -118,7 +118,7 @@ $config['subclass_prefix'] = 'MY_';
 
 /*
 |--------------------------------------------------------------------------
-| Composer auto-loading
+| Composer auto-loadinger
 |--------------------------------------------------------------------------
 |
 | Enabling this setting will tell CodeIgniter to look for a Composer
@@ -136,7 +136,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = false;
+$config['composer_autoload'] = 'vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
